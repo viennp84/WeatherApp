@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:body>
+<!-- Set the Layout and Title for this page -->
+<ui:composition template="/layouts/commonLayout.xhtml">
+<ui:define name="title">JSF Login Page</ui:define>
+<ui:define name="content">
+	<!-- Login Form -->
+	<div align="center">
+		<h:form class="form" >
+			State:<h:selectOneMenu  class="drop_list">
+                <f:selectItem itemValue="1" itemLabel="Arizona" />
+          		</h:selectOneMenu><br/><br/>
+			City:<h:selectOneMenu  class="drop_list">
+                <f:selectItem itemValue="1" itemLabel="Scottsdale" />
+                <f:selectItem itemValue="2" itemLabel="Pheonix" />
+          	</h:selectOneMenu><br/><br/>
+			 
+			<div align="center"> <h:commandButton  action="#{formController.readWeather(weather)}" class="btn_submit" value="View"/></div>
+		</h:form>
+		<h:messages />
+	</div>
+</ui:define>
+</ui:composition>
+</h:body>
+
+</html>
