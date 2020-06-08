@@ -2,7 +2,8 @@ package beans;
 
 
 
-import javax.annotation.ManagedBean;
+
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -18,7 +19,7 @@ public class Weather {
 	
 	int temp;
 	int humidity;
-	int precipitation;
+	int windSpeed;
 	String city;
 	String state;
 	
@@ -29,7 +30,7 @@ public class Weather {
 	public Weather(int temp, int humidity, int precipitation, String city, String state) {
 		this.temp = temp;
 		this.humidity = humidity;
-		this.precipitation = precipitation;
+		this.windSpeed = precipitation;
 		this.city = city;
 		this.state = state;
 	}
@@ -50,12 +51,12 @@ public class Weather {
 		this.humidity = humidity;
 	}
 
-	public int getPrecipitation() {
-		return precipitation;
+	public int getWindSpeed() {
+		return windSpeed;
 	}
 
-	public void setPrecipitation(int precipitation) {
-		this.precipitation = precipitation;
+	public void setWindSpeed(int windSpeed) {
+		this.windSpeed = windSpeed;
 	}
 
 	public String getCity() {
