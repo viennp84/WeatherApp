@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/layouts/commonLayoutIndex.xhtml">
+	<ui:define name="title">Weather App</ui:define>
+	<ui:define name="content">
+		<!--  Registration Form -->
+		<div align="center">
+			<h:form>
+				<!-- Initialize Table to display the input forms -->
+				<table>
+					<tr>
+						<td>First Name:</td>
+						<td><h:inputText id="firstName" value="#{user.firstName}"
+								title="" />
+							<h:message for="firstName" /></td>
+					</tr>
+					<tr>
+						<td>Last Name:</td>
+						<td><h:inputText id="lastName" value="#{user.lastName}"
+								title="" />
+							<h:message for="lastName" /></td>
+					</tr>
+					<tr>
+						<td>Email:</td>
+						<td><h:inputText id="email" value="#{user.email}" title="" />
+							<h:message for="email" /></td>
+					</tr>
+					<tr>
+						<td>Username:</td>
+						<td><h:inputText id="username"
+								value="#{user.credentials.username}" title="" />
+							<h:message for="username" /></td>
+					</tr>
+					<tr>
+						<td>Password:</td>
+						<td><h:inputSecret id="password"
+								value="#{user.credentials.password}" title="" />
+							<h:message for="password" /></td>
+					</tr>
+				</table>
+				<!-- Buttons and call the formController -->
+				<h:commandButton value="Register"
+					action="#{userController.onRegister(user)}" />
+				<h:commandButton value="Login"
+					action="#{userController.onSubmitLogin()}" />
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+<h:head>
+	<title>Recipe App</title>
+</h:head>
+</html>

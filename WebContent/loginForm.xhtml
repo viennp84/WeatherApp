@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/layouts/commonLayoutIndex.xhtml">
+	<ui:define name="title">Weather App</ui:define>
+	<ui:define name="content">
+		<!--  Login Form and buttons to login or register -->
+		<div align="center">
+			<h:form>
+				<table>
+					<tr>
+						<td>Username:</td>
+						<td><h:inputText id="username"
+								value="#{user.credentials.username}" title="" />
+							<h:message for="username" /></td>
+					</tr>
+					<tr>
+						<td>Password:</td>
+						<td><h:inputSecret id="password"
+								value="#{user.credentials.password}" title="" />
+							<h:message for="password" /></td>
+					</tr>
+				</table>
+				<h:commandButton value="Login"
+					action="#{userController.onLogin(user)}" />
+				<h:commandButton value="Register"
+					action="#{userController.onSubmitRegister()}" />
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+<h:head>
+	<title>Weather App</title>
+</h:head>
+</html>
