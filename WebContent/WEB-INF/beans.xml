@@ -7,4 +7,8 @@
 	<alternatives>
 		<class>dao.WeatherDataAccessService</class>
 	</alternatives>
+ <!-- This is where we set the POJO's to EJB's -->
+ <alternatives>
+  <class>business.UserBusinessService</class>
+ </alternatives>
 </beans>
